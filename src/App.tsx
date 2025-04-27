@@ -3,7 +3,7 @@ import { APIProvider, Map, Marker } from "@vis.gl/react-google-maps";
 import { ToastContainer, toast } from "react-toastify";
 import CallTaxiImage from "./assets/call-taxi.png";
 
-import "./App.css";
+import "./App.scss";
 
 const App = () => {
   const {
@@ -36,35 +36,9 @@ const App = () => {
   return (
     <APIProvider apiKey={REACT_APP_GOOGLE_MAP_KEY}>
       <ToastContainer />
-      <button
-        onClick={notify}
-        style={{
-          background: "#FFD772",
-          color: "black",
-          cursor: "pointer",
-          position: "fixed",
-          left: "50%",
-          top: "70%",
-          marginLeft: "-10rem",
-          marginTop: "-2rem",
-          width: "20rem",
-          height: "4rem",
-          zIndex: 1,
-          fontSize: "1.5rem",
-          border: "2px solid black",
-          boxShadow: "0px 6px 6px rgba(0, 0, 0, 0.5)",
-        }}
-      >
-        <img
-          src={CallTaxiImage}
-          style={{
-            width: "1.5rem",
-            height: "1.5rem",
-          }}
-        />
-        <span style={{ top: "-0.1rem", left: "0.5rem", position: "relative" }}>
-          Taxi
-        </span>
+      <button className="call-taxi-button" onClick={notify}>
+        <img src={CallTaxiImage} />
+        <span>Taxi</span>
       </button>
       <Map
         mapId={mapId}
