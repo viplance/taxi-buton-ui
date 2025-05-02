@@ -2,23 +2,35 @@
   margin: 0 0;
 }
 
-button.call-taxi-button {
+button.call-taxi-button,
+button.cancel-button {
   border-radius: 8px;
   border: 2px solid black;
   font-size: 1.5rem;
   font-weight: 500;
   font-family: inherit;
   cursor: pointer;
-  background: #ffd772;
   color: black;
   position: fixed;
   left: 50%;
-  top: 70%;
+  top: 67%;
   margin-left: -10rem;
   margin-top: -2rem;
   width: 20rem;
   height: 4rem;
   z-index: 1;
+
+  &.call-taxi-button {
+    background: #ffd772;
+  }
+
+  &.cancel-button {
+    background: red;
+  }
+
+  @media only screen and (max-width: 960px) {
+    top: 85%;
+  }
 
   img {
     width: 1.5rem;
@@ -29,5 +41,11 @@ button.call-taxi-button {
     top: -0.1rem;
     left: 0.5rem;
     position: relative;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+
+    opacity: 0.7;
   }
 }
